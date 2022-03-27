@@ -1,8 +1,8 @@
 library(tidyverse)
 library(mosaic)
 
-logs <- read_csv("logs.csv",guess_max=2106600)
-playerlog <- read_csv("player-6607011.csv")
+logs <- read_csv("C://Users/natha/Documents/GrandWham/dataSources/logs.csv",guess_max=2106600)
+playerlog <- read_csv("C:/Users/natha/Documents/GrandWham/dataSources/For Students/player-6607011.csv")
 s5 <- read_csv("S5_scores_cleaned.csv")
 
 # from narrow data to wide data
