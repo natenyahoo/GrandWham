@@ -25,6 +25,21 @@ s5$week12 <- as.numeric(as.character(s5$week12))
 s5$week24 <- as.numeric(as.character(s5$week24))
 
 # create column for before vs after difference
-s5 <- s5 %>% mutate(before_score = 0)
-s5 <- s5 %>% mutate(after_score = 0)
+finalscore <- c(3.875, 3.6, 3.5, 3.8, 4.0, 4.0, 4.0, 3.1, 4.0, 3.9, 3.2, 3.8, 4.0, 3.7, 3.8, 3.9, 3.7, 3.9, 4.0, 3.9, 4.0, 3.8, 4.0, 4.0, 3.1, 4.0, 4.0, 4.0, 4.0, 4.0, 3.5, 3.9, 4.0, 3.9, 4.0, 4.0, 3.9, 3.3, 4.0, 3.8, 3.7, 4.0, 4.0, 3.8, 3.9, 4.0, 4.0, 4.0, 4.0, 3.1, 3.6, 3.1, 4.0, 4.0, 4.0, 4.0, 3.8, 4.0, 4.0, 3.9, 4.0, 4.0, 4.0, 0)
+
+s5$week24 <- finalscore
+
+s5 <- s5 %>% mutate(before_score = s5$week0)
+s5 <- s5 %>% mutate(score_diff = s5$week24 - s5$week0)
+
+scores5 <- s5[1:63, ]
+
+mean(scores5$score_diff)
+sd(scores5$score_diff)
+
+t.test(s5$score_diff, y = NULL, alternative = c("two.sided"))
+
+
+
+s5[8,2] = 3.1
 
